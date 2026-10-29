@@ -1,0 +1,6 @@
+# 本地预览用的覆盖配置：
+#   jekyll serve --config _config.yml,_config.local.yml
+#
+# 生产配置里的 url 是 https://sherioccode.github.io，
+# 主题会用它拼静态资源地址；本地把 url 清空，资源才会走 localhost。
+url: ""
