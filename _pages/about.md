@@ -7,13 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-我是 **Zhang Jie**，目前在武汉理工大学。这个站点整理我的研究、项目和平时写下的东西。
+我是 **张杰 (Zhang Jie)**，武汉理工大学计算机技术硕士研究生（2026 级，保送），研究方向为**室内场景三维重建**。平时也做点大模型应用与桌面工具，把过程中的想法写在这里。
 
 ## 研究兴趣
 
-- 大语言模型应用
-- 文档理解
-- 机器翻译
+- 室内场景三维重建
+- 3D Gaussian Splatting
+- 大模型应用与 Agent
 
 ## 项目
 
@@ -25,5 +25,6 @@ redirect_from:
 
 ## 联系方式
 
+- 邮箱：[sherioc@whut.edu.cn](mailto:sherioc@whut.edu.cn)
 - GitHub：[SheriocCode](https://github.com/SheriocCode)
-- 邮箱：待补充
+- 简历：[CV](/cv/)

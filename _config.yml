@@ -25,11 +25,11 @@ author:
   avatar           : "avatar.svg"
   name             : "Zhang Jie"
   pronouns         : # example: "she/her"  
-  bio              : "武汉理工大学 · 研究、项目与写作。"
+  bio              : "武汉理工大学 · 室内场景三维重建"
   location         : "武汉，中国"
   employer         : "武汉理工大学"
   uri              : # URL
-  email            : # 邮箱
+  email            : "sherioc@whut.edu.cn"
 
   # Academic websites
   academia         : # URL
