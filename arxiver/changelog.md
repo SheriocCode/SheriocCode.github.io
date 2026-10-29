@@ -2,6 +2,7 @@
 layout: arxiver/page
 permalink: /arxiver/changelog.html
 nav: changelog
+group: arxiver
 title: 更新日志 — Arxiver
 description: Arxiver 版本更新历史。
 ---

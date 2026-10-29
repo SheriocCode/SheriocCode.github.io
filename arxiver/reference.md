@@ -2,6 +2,7 @@
 layout: arxiver/doc
 permalink: /arxiver/reference.html
 nav: reference
+group: arxiver
 title: 参考 — Arxiver
 description: Arxiver 架构、数据、构建与发布参考。
 toc:

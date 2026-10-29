@@ -46,10 +46,19 @@ code, pre { font-family: inherit; }
 .brand img { display: block; width: auto; }
 .brand .mark { height: 24px; }
 .brand .word { height: 19px; }
+.brand-name { font-size: 19px; font-weight: 700; color: var(--ink); letter-spacing: .01em; }
 .site-nav { margin-left: auto; display: flex; align-items: center; gap: 20px; }
 .site-nav a { color: var(--mute); font-size: 15px; font-weight: 400; text-decoration: none; }
 .site-nav a:not(.btn):hover { color: var(--ink); }
 .site-nav a.active { color: var(--ink); font-weight: 500; }
+
+/* project subnav (Arxiver docs) */
+.project-nav { background: var(--soft); border-bottom: 1px solid var(--hairline); }
+.project-nav .container { display: flex; align-items: center; gap: 22px; height: 46px; overflow-x: auto; }
+.project-nav a { color: var(--mute); font-size: 14px; text-decoration: none; white-space: nowrap; }
+.project-nav a:hover { color: var(--ink); }
+.project-nav a.active { color: var(--ink); font-weight: 500; }
+.project-nav a:last-child { margin-left: auto; }
 
 /* mobile nav toggle (hidden on desktop) */
 .nav-toggle { display: none; }
@@ -81,7 +90,7 @@ code, pre { font-family: inherit; }
 .btn svg { width: 16px; height: 16px; }
 
 /* ---------- hero ---------- */
-.hero { padding: 96px 0 64px; text-align: center; }
+.hero { padding-top: 96px; padding-bottom: 64px; text-align: center; }
 .hero .badge {
   display: inline-block;
   background: var(--dark);
@@ -139,6 +148,7 @@ pre {
   padding: 1px 6px;
   font-size: 14px;
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 blockquote {
@@ -152,6 +162,8 @@ blockquote p { margin: 0; }
 
 table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
 th, td { text-align: left; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+.doc-body table { table-layout: fixed; }
+.doc-body th, .doc-body td { overflow-wrap: anywhere; }
 th { color: var(--mute); font-weight: 700; font-size: 14px; }
 
 /* ---------- home: comparison ---------- */
@@ -339,7 +351,7 @@ th { color: var(--mute); font-weight: 700; font-size: 14px; }
 .tui .car-item img { border-color: rgba(255, 255, 255, .16); }
 
 /* ---------- home content ---------- */
-.home-content { padding: 64px 0 80px; }
+.home-content { padding-top: 64px; padding-bottom: 80px; overflow-wrap: break-word; }
 .home-content > h1,
 .home-content > h2 {
   font-size: 24px;
@@ -376,14 +388,14 @@ th { color: var(--mute); font-weight: 700; font-size: 14px; }
 .home-content ol li strong { display: block; color: var(--ink); }
 
 /* ---------- docs ---------- */
-.doc { display: grid; grid-template-columns: 220px 1fr; gap: 48px; padding: 48px 0 96px; align-items: start; }
+.doc { display: grid; grid-template-columns: 220px 1fr; gap: 48px; padding-top: 48px; padding-bottom: 96px; align-items: start; }
 .toc { position: sticky; top: 24px; font-size: 15px; }
 .toc h4 { margin: 0 0 12px; font-size: 14px; font-weight: 700; color: var(--ink); }
 .toc h4::before { content: "[+] "; }
 .toc a { display: block; padding: 4px 0; color: var(--mute); text-decoration: none; }
 .toc a:hover { color: var(--ink); }
 
-.doc-body { min-width: 0; }
+.doc-body { min-width: 0; overflow-wrap: break-word; }
 .doc-body h2 {
   font-size: 16px;
   font-weight: 700;
@@ -401,7 +413,7 @@ th { color: var(--mute); font-weight: 700; font-size: 14px; }
 .doc-body li { padding: 2px 0; }
 
 /* ---------- changelog ---------- */
-.page-body { padding: 64px 0 96px; }
+.page-body { padding-top: 64px; padding-bottom: 96px; overflow-wrap: break-word; }
 .page-body > h1 { font-size: 28px; font-weight: 700; color: var(--ink); margin: 0 0 4px; }
 .page-body h2 {
   font-size: 19px;
@@ -416,6 +428,11 @@ th { color: var(--mute); font-weight: 700; font-size: 14px; }
 .page-body li { padding: 3px 0; color: var(--body); font-size: 15px; }
 .page-body li::before { content: "[+] "; color: var(--ink); font-weight: 700; }
 
+/* ---------- blog post ---------- */
+.post-meta { color: var(--mute); font-size: 14px; margin: 0 0 28px; }
+.post p, .post li { font-size: 15px; }
+.post h2 + p { color: var(--body); font-size: 15px; }
+
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--hairline); padding: 32px 0; color: var(--mute); font-size: 14px; }
 .site-footer .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
@@ -423,9 +440,9 @@ th { color: var(--mute); font-weight: 700; font-size: 14px; }
 .site-footer a:hover { color: var(--ink); }
 
 @media (max-width: 760px) {
-  .hero { padding: 64px 0 32px; }
+  .hero { padding-top: 64px; padding-bottom: 32px; }
   .hero h1 { font-size: 28px; }
-  .home-content { padding: 40px 0 64px; }
+  .home-content { padding-top: 40px; padding-bottom: 64px; }
   .home-content > h1,
   .home-content > h2 { margin-top: 32px; padding-top: 20px; }
   .doc { grid-template-columns: 1fr; gap: 24px; }

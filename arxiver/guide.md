@@ -2,6 +2,7 @@
 layout: arxiver/doc
 permalink: /arxiver/guide.html
 nav: guide
+group: arxiver
 title: 文档 — Arxiver
 description: Arxiver 桌面应用的安装、配置与使用文档。
 toc:

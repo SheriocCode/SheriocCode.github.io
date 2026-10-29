@@ -1,0 +1,8 @@
+---
+layout: arxiver/default
+---
+<div class="container page-body post">
+  <h1>{{ page.title }}</h1>
+  <p class="post-meta">{{ page.date | date: "%Y-%m-%d" }}{% if page.categories.size > 0 %} · {{ page.categories | join: " / " }}{% endif %}</p>
+  {{ content }}
+</div>

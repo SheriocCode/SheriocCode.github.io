@@ -1,7 +1,8 @@
 ---
 layout: arxiver/home
 permalink: /arxiver/
-nav: home
+nav: overview
+group: arxiver
 title: Arxiver — 把英文论文读成中文
 description: 导入本地 PDF 或 arXiv 链接，用本机翻译引擎离线翻译；原文 / 对照 / 译文三视图逐页阅读，另有能跨文献问答、联网检索的内置 AI 助手。
 badge: 本机离线 · 0 费用
@@ -44,7 +45,7 @@ compare_note:
 1. **安装并启动** 运行 `Arxiver Setup vX.exe`（内置翻译引擎与运行时）。
 2. **下载模型** 首次翻译前到「设置 → 本地模型」下载版面识别模型（约 72 MB，必需）和本地翻译模型（约 1.1 GB，仅本地模式）。使用在线接口时只需版面识别模型。
 3. **导入并翻译** 导入本地 PDF 或 arXiv 链接，打开后点「翻译」，在阅读器里切换 原文 / 对照 / 译文。
-4. （可选）**配置助手** 需要对话式助手时，在「设置 → AI 助手」填入 OpenAI 兼容接口。
+4. （可选）**配置助手** 需要对话式助手时，在「设置 → AI 服务」填入 OpenAI 兼容接口。
 
 - **自动更新** — 内置差量更新，升级只下载变化的块；引擎与翻译模型没变就不会重下。
 - **源码（开发者）** — 克隆仓库后进入 `electron-app/`：`npm install` → `npm run dev`。[查看仓库 →](https://github.com/SheriocCode/Arxiver)

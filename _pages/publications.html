@@ -1,40 +1,19 @@
 ---
-layout: archive
-title: "Publications"
+layout: arxiver/page
 permalink: /publications/
-author_profile: true
+nav: publications
+title: 论文 — Zhang Jie
+description: Zhang Jie 的论文列表。
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
+<h1>论文</h1>
 
 {% if site.publications.size == 0 %}
-  <p>论文列表整理中。</p>
-{% endif %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
+<p>论文列表整理中。</p>
 {% else %}
+<ul>
   {% for post in site.publications reversed %}
-    {% include archive-single.html %}
+  <li><strong>{{ post.date | date: "%Y" }}</strong> <a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.venue %} · {{ post.venue }}{% endif %}</li>
   {% endfor %}
+</ul>
 {% endif %}
-
-
-

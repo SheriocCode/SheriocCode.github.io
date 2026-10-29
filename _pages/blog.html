@@ -1,0 +1,21 @@
+---
+layout: arxiver/page
+permalink: /blog/
+redirect_from:
+  - /year-archive/
+nav: blog
+title: 随笔 — Zhang Jie
+description: Zhang Jie 的随笔与记录。
+---
+
+<h1>随笔</h1>
+
+{% if site.posts.size == 0 %}
+<p>还没有文章。</p>
+{% else %}
+<ul>
+  {% for post in site.posts %}
+  <li><strong>{{ post.date | date: "%Y-%m-%d" }}</strong> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}

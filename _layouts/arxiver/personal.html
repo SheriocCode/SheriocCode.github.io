@@ -1,0 +1,19 @@
+---
+layout: arxiver/default
+---
+<section class="hero container">
+  {% if page.badge %}<span class="badge">{{ page.badge }}</span>{% endif %}
+  <h1>{{ page.hero | default: page.title }}</h1>
+  {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+  {% if page.buttons %}
+  <div class="btn-row">
+    {% for item in page.buttons %}
+    <a class="btn{% if item.primary %} primary{% endif %}" href="{{ item.url }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>{{ item.text }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+
+<div class="container home-content">
+{{ content }}
+</div>
