@@ -203,6 +203,7 @@ gh api repos/SheriocCode/SheriocCode.github.io/pages/builds/latest --jq '.status
 
 ## 故障排查
 
+- **`No source of timezone data could be found`**：Windows 上 Jekyll 需要时区数据；`Gemfile` 已包含 `tzinfo-data`，重新跑一次 `bundle install` 即可。
 - **`unable to find a version of 'jekyll' to activate`**：本机有多个 Jekyll 版本；删掉 `Gemfile.lock` 用 `bundle exec`，或用上面的显式版本命令。
 - **本地页面没样式 / 加载的是线上 CSS**：确认带了 `--config _config.yml,_config.local.yml`。
 - **Sass deprecation warning**：主题依赖的老语法提示，不影响构建。
