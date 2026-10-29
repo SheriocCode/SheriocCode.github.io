@@ -1,21 +1,20 @@
 ---
-layout: arxiver/page
+layout: archive
+title: "Posts"
 permalink: /blog/
+author_profile: true
 redirect_from:
   - /year-archive/
-nav: blog
-title: 随笔 — Zhang Jie
-description: Zhang Jie 的随笔与记录。
 ---
 
-<h1>随笔</h1>
+{% include base_path %}
 
-{% if site.posts.size == 0 %}
-<p>还没有文章。</p>
-{% else %}
-<ul>
-  {% for post in site.posts %}
-  <li><strong>{{ post.date | date: "%Y-%m-%d" }}</strong> <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-{% endif %}
+{% capture written_year %}'None'{% endcapture %}
+{% for post in site.posts %}
+  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+  {% if year != written_year %}
+    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
+    {% capture written_year %}{{ year }}{% endcapture %}
+  {% endif %}
+  {% include archive-single.html %}
+{% endfor %}

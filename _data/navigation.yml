@@ -1,17 +1,13 @@
-# 顶部导航。当前布局（`_layouts/arxiver/default.html`）里的链接是写死的，
-# 这里仅作记录；改导航请同时改布局。
+# 顶部导航：第一项是站点名（自动指向首页），其余在下面调整。
 main:
-  - title: "首页"
-    url: /
-
-  - title: "简历"
+  - title: "CV"
     url: /cv/
 
-  - title: "论文"
+  - title: "Publications"
     url: /publications/
 
   - title: "Arxiver"
     url: /arxiver/
 
-  - title: "随笔"
+  - title: "Posts"
     url: /blog/

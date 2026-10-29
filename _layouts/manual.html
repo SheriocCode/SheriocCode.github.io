@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{% include base_path %}
+
+<div id="main" class="manual" role="main">
+  <button type="button" class="manual__toc-toggle" aria-expanded="false" aria-controls="manual-toc">目录</button>
+
+  <div class="manual__wrap">
+    <aside class="manual__toc" id="manual-toc">
+      <div class="manual__toc-head">
+        <a class="manual__toc-name" href="{{ base_path }}/arxiver/">Arxiver</a>
+        <span class="manual__toc-ver">v0.16.0</span>
+      </div>
+      {% for group in page.toc %}
+        <span class="manual__cap">{{ group.title }}</span>
+        <ul>
+          {% for item in group.items %}
+            <li><a href="#{{ item.id }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+      <div class="manual__pagefoot">
+        <a href="https://github.com/SheriocCode/Arxiver">GitHub</a> ·
+        <a href="https://github.com/SheriocCode/Arxiver/releases/latest">下载</a>
+      </div>
+    </aside>
+
+    <div class="manual__content">
+      <ul class="manual__crumbs">
+        <li><a href="{{ base_path }}/">Home</a></li>
+        <li class="sep">/</li>
+        <li>Arxiver</li>
+        <li class="right"><a href="https://github.com/SheriocCode/Arxiver" target="_blank" rel="noopener">GitHub ↗</a></li>
+      </ul>
+
+      {{ content }}
+    </div>
+  </div>
+
+  <button type="button" class="manual__top" aria-label="回到顶部">↑</button>
+</div>
+
+<script>
+(function () {
+  var toc = document.getElementById("manual-toc");
+  var toggle = document.querySelector(".manual__toc-toggle");
+  if (toggle && toc) {
+    toggle.addEventListener("click", function () {
+      var open = toc.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  var top = document.querySelector(".manual__top");
+  if (top) {
+    top.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    window.addEventListener("scroll", function () {
+      top.classList.toggle("is-visible", window.scrollY > 600);
+    }, { passive: true });
+  }
+
+  var links = Array.prototype.slice.call(document.querySelectorAll(".manual__toc a[href^='#']"));
+  var targets = links.map(function (a) {
+    return document.getElementById(decodeURIComponent(a.getAttribute("href").slice(1)));
+  }).filter(Boolean);
+  if (!targets.length) { return; }
+
+  var setCurrent = function (id) {
+    links.forEach(function (a) {
+      a.classList.toggle("is-current", a.getAttribute("href") === "#" + id);
+    });
+  };
+
+  var update = function () {
+    var current = null;
+    targets.forEach(function (t) {
+      if (t.getBoundingClientRect().top <= 120) { current = t; }
+    });
+    links.forEach(function (a) {
+      a.classList.toggle("is-current", current ? a.getAttribute("href") === "#" + current.id : false);
+    });
+  };
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+})();
+</script>

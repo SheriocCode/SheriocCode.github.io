@@ -1,19 +1,16 @@
 ---
-layout: arxiver/page
+layout: archive
+title: "Publications"
 permalink: /publications/
-nav: publications
-title: 论文 — Zhang Jie
-description: Zhang Jie 的论文列表。
+author_profile: true
 ---
 
-<h1>论文</h1>
+{% include base_path %}
 
 {% if site.publications.size == 0 %}
-<p>论文列表整理中。</p>
+  <p>论文列表整理中。</p>
 {% else %}
-<ul>
   {% for post in site.publications reversed %}
-  <li><strong>{{ post.date | date: "%Y" }}</strong> <a href="{{ post.url | relative_url }}">{{ post.title }}</a>{% if post.venue %} · {{ post.venue }}{% endif %}</li>
+    {% include archive-single.html %}
   {% endfor %}
-</ul>
 {% endif %}
