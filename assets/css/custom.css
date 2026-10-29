@@ -187,3 +187,24 @@ body { font-size: 16px; }
 @media (max-width: 57.8125em) {
   .manual__toc.is-open { max-height: 60vh; overflow-y: auto; }
 }
+
+/* 主题切换图标 */
+.theme-icon {
+  width: 18px; height: 18px; display: block;
+  fill: none; stroke: currentColor; stroke-width: 1.8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.theme-icon--moon { display: none; }
+html[data-theme="dark"] .theme-icon--sun { display: none; }
+html[data-theme="dark"] .theme-icon--moon { display: block; }
+
+/* 代码块在深色模式下保持可读 */
+.page__content pre code, .manual__content pre code,
+.highlight pre code, .highlight code {
+  color: var(--code-text);
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+.highlight, pre.highlight, div.highlighter-rouge pre { background-color: var(--code-bg); }

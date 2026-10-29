@@ -2,6 +2,21 @@
 
 <meta charset="utf-8">
 
+<style>
+  /* 首屏背景：在样式表加载前就按主题上色，避免切页闪白 */
+  html, body { background-color: #ffffff; }
+  html[data-theme="dark"], html[data-theme="dark"] body { background-color: #15171b; }
+</style>
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem("theme") || "system";
+      var dark = saved === "dark" || (saved === "system" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+      if (dark) { document.documentElement.setAttribute("data-theme", "dark"); }
+    } catch (e) {}
+  })();
+</script>
+
 {% include seo.html %}
 
 <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
