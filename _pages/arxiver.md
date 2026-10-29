@@ -10,6 +10,8 @@ redirect_from:
 toc:
   - title: 开始
     items:
+      - { title: 界面与演示, id: demo }
+      - { title: 视频演示, id: videos }
       - { title: 下载与安装, id: download }
       - { title: 安装与启动, id: install }
       - { title: 翻译引擎, id: model }
@@ -49,7 +51,7 @@ toc:
 </div>
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">
-  <img src="/arxiver/assets/index/首页.jpg" alt="Arxiver 主界面">
+  <img src="/arxiver/assets/index/home.jpg" alt="Arxiver 主界面">
   <figcaption>主界面：文献库、双语阅读与 AI 助手在同一个窗口。</figcaption>
 </figure>
 
@@ -72,6 +74,54 @@ toc:
 | AI 助手 | 跨文献问答、联网检索、读写文献库 | 官方无内置 |
 | 文献管理 | 分类、标签、笔记、回收站、全文检索 | 元数据与浏览器抓取更完整 |
 | Overleaf | 内嵌工作区，可按需读取与修改 | 无 |
+
+## 界面与演示 {#demo}
+
+<div class="rtd-doc-figure-grid">
+  <figure class="rtd-doc-figure">
+    <img src="/arxiver/assets/index/library.jpg" alt="Arxiver 文献库">
+    <figcaption>文献库：分类、标签、笔记与全文检索</figcaption>
+  </figure>
+  <figure class="rtd-doc-figure">
+    <img src="/arxiver/assets/index/citations.jpg" alt="段落级引用">
+    <figcaption>段落级引用：回答绑定页码，点击跳转原文</figcaption>
+  </figure>
+  <figure class="rtd-doc-figure">
+    <img src="/arxiver/assets/index/logs.jpg" alt="对话与工具调用日志">
+    <figcaption>日志：对话、工具调用与耗时全链路可追溯</figcaption>
+  </figure>
+  <figure class="rtd-doc-figure">
+    <img src="/arxiver/assets/index/overleaf.jpg" alt="Overleaf AI 编辑">
+    <figcaption>Overleaf：AI 读取项目文件，修改建议确认后写入</figcaption>
+  </figure>
+  <figure class="rtd-doc-figure">
+    <img src="/arxiver/assets/index/settings.jpg" alt="设置与运行状态">
+    <figcaption>设置与运行状态：连接、模型与本地推理</figcaption>
+  </figure>
+</div>
+
+### 视频演示 {#videos}
+
+<figure class="rtd-doc-figure rtd-doc-figure--wide">
+  <video controls muted loop playsinline preload="metadata" width="1206" height="720" poster="/arxiver/assets/index/home.jpg">
+    <source src="/arxiver/assets/videos/translate.mp4" type="video/mp4">
+  </video>
+  <figcaption>翻译：原文 / 对照 / 译文三视图，边翻边看。</figcaption>
+</figure>
+
+<figure class="rtd-doc-figure rtd-doc-figure--wide">
+  <video controls muted loop playsinline preload="metadata" width="1280" height="764" poster="/arxiver/assets/index/library.jpg">
+    <source src="/arxiver/assets/videos/tagging.mp4" type="video/mp4">
+  </video>
+  <figcaption>文献管理：批量加标签、分类与全文检索。</figcaption>
+</figure>
+
+<figure class="rtd-doc-figure rtd-doc-figure--wide">
+  <video controls muted loop playsinline preload="metadata" width="1280" height="764" poster="/arxiver/assets/index/overleaf.jpg">
+    <source src="/arxiver/assets/videos/overleaf.mp4" type="video/mp4">
+  </video>
+  <figcaption>Overleaf：AI 按需读取项目文件，REPLACE / INSERT / CREATE_FILE 建议确认后写入。</figcaption>
+</figure>
 
 ## 下载与安装 {#download}
 

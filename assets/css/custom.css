@@ -226,3 +226,4 @@ html {
 
 .manual__toc::-webkit-scrollbar { width: 6px; }
 .manual__toc::-webkit-scrollbar-thumb { border-width: 1px; }
+.rtd-doc-figure-grid > .rtd-doc-figure:last-child:nth-child(odd) { grid-column: 1 / -1; }
