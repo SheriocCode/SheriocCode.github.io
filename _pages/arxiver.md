@@ -1,6 +1,7 @@
 ---
 layout: manual
 title: "Arxiver"
+description: "Arxiver 是一款 Windows 桌面论文翻译工具：内置 HY-MT2 与 llama.cpp，在本机把英文论文译成中文，提供原文、对照、译文三视图，以及带页码与原文引用的 AI 助手。"
 permalink: /arxiver/
 author_profile: false
 redirect_from:
@@ -42,12 +43,17 @@ toc:
 
 # Arxiver
 
-把英文论文，读成中文。导入本地 PDF 或 arXiv 链接，本机翻译引擎离线完成：约 10 页/分钟、边翻边看，论文不出本机；另有能跨文献问答、联网检索的内置 AI 助手。
+Arxiver 是一款面向论文阅读的 Windows 桌面应用。它在本机把英文论文翻译成中文：内置 HY-MT2 翻译模型与 llama.cpp 运行时，导入本地 PDF 或粘贴 arXiv / DOI 链接即可开始，翻译不需要 API Key；翻译与版面识别都在本地完成，论文内容不会上传到翻译服务。
+
+阅读器保留原 PDF 的版面与图表，提供原文、对照、译文三种视图，翻译过程中即可逐页阅读；段落块框可随时回溯原文，译文与原文的位置一一对应。
+
+Arxiver 助手可以基于当前论文或整个文献库回答问题。回答附带页码与原文片段引用，点击即可回到 PDF 并高亮对应内容；需要时还可联网检索 arXiv、会议与期刊，或在内嵌的 Overleaf 工作区中按需读取、修改项目文件。
 
 <div class="rtd-badges">
   <a href="https://github.com/SheriocCode/Arxiver/releases/latest"><img src="https://img.shields.io/github/v/release/SheriocCode/Arxiver?style=flat-square" alt="Release"></a>
   <a href="https://github.com/SheriocCode/Arxiver/releases/latest"><img src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D4?style=flat-square" alt="Platform"></a>
   <a href="/arxiver/#model"><img src="https://img.shields.io/badge/translation-100%25%20offline-10a37f?style=flat-square" alt="Offline"></a>
+  <a href="/arxiver/#model"><img src="https://img.shields.io/badge/API%20key-not%20required-10a37f?style=flat-square" alt="No API key"></a>
 </div>
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">
@@ -373,6 +379,13 @@ npm run dist       # 打包安装包（electron-builder）
 ## 更新日志 {#changelog}
 
 全部版本见 [GitHub Releases](https://github.com/SheriocCode/Arxiver/releases)。
+
+### v0.17.1（2026-11-02）
+
+- **拖动详情面板不再卡顿**：先前拖动时 PDF 阅读器每帧都在重算版面宽度并重渲染页面；现在改为宽度稳定后再重排，PDF 打开时拖拽也顺滑。
+- **长对话滚动更顺**：AI 面板的 Markdown / 公式渲染按内容缓存，流式输出时未变化的历史消息不再重复解析，滚动和拖拽不再被渲染拖住。
+- **滚动兜底**：滚轮后若原生滚动没有生效（内容高度刚变化、滚动范围未刷新），会补一次滚动，避免「滚动条像卡住」。
+- **弹层滚动隔离**：在「历史记录」「技能」「@ 引用」弹层里滚动时，只滚弹层自己的列表，不再连带滚动下面的对话区。
 
 ### v0.17.0（2026-11-02）
 
