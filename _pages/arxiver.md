@@ -1,7 +1,7 @@
 ---
 layout: manual
 title: "Arxiver"
-description: "Arxiver 是一款 Windows 桌面论文翻译工具：内置 HY-MT2 与 llama.cpp，在本机把英文论文译成中文，提供原文、对照、译文三视图，以及带页码与原文引用的 AI 助手。"
+description: "Arxiver 是一款面向科研阅读的 Windows 桌面应用：保留原版面的论文翻译，支持本地或在线模型，并提供引用可溯源的 AI 助手。"
 permalink: /arxiver/
 author_profile: false
 redirect_from:
@@ -43,17 +43,17 @@ toc:
 
 # Arxiver
 
-Arxiver 是一款面向论文阅读的 Windows 桌面应用。它在本机把英文论文翻译成中文：内置 HY-MT2 翻译模型与 llama.cpp 运行时，导入本地 PDF 或粘贴 arXiv / DOI 链接即可开始，翻译不需要 API Key；翻译与版面识别都在本地完成，论文内容不会上传到翻译服务。
+Arxiver 是一款面向科研阅读的 Windows 桌面应用，用于英文论文的中文翻译与辅助阅读。翻译在保留原 PDF 版面与图表的前提下进行，既可使用内置 HY-MT2 模型在本机完成，也可接入任意 OpenAI 兼容接口；支持本地 PDF 与 arXiv / DOI 导入。
 
-阅读器保留原 PDF 的版面与图表，提供原文、对照、译文三种视图，翻译过程中即可逐页阅读；段落块框可随时回溯原文，译文与原文的位置一一对应。
+阅读器提供原文、对照、译文三种视图，翻译过程中即可逐页阅读；段落块框可回溯原文，译文与原文的版面位置一一对应。
 
-Arxiver 助手可以基于当前论文或整个文献库回答问题。回答附带页码与原文片段引用，点击即可回到 PDF 并高亮对应内容；需要时还可联网检索 arXiv、会议与期刊，或在内嵌的 Overleaf 工作区中按需读取、修改项目文件。
+AI 助手基于当前论文或整个文献库作答，引用标注页码与原文片段，可直接定位至 PDF 对应位置；需要时还可联网检索 arXiv、会议与期刊，或在内嵌的 Overleaf 工作区中按需读取、修改项目文件。
 
 <div class="rtd-badges">
   <a href="https://github.com/SheriocCode/Arxiver/releases/latest"><img src="https://img.shields.io/github/v/release/SheriocCode/Arxiver?style=flat-square" alt="Release"></a>
   <a href="https://github.com/SheriocCode/Arxiver/releases/latest"><img src="https://img.shields.io/badge/platform-Windows%2010%20%7C%2011-0078D4?style=flat-square" alt="Platform"></a>
-  <a href="/arxiver/#model"><img src="https://img.shields.io/badge/translation-100%25%20offline-10a37f?style=flat-square" alt="Offline"></a>
-  <a href="/arxiver/#model"><img src="https://img.shields.io/badge/API%20key-not%20required-10a37f?style=flat-square" alt="No API key"></a>
+  <a href="/arxiver/#model"><img src="https://img.shields.io/badge/translation-local%20%26%20online-10a37f?style=flat-square" alt="Local or online"></a>
+  <a href="/arxiver/#model"><img src="https://img.shields.io/badge/no%20subscription-10a37f?style=flat-square" alt="No subscription"></a>
 </div>
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">

@@ -34,7 +34,7 @@ Inter 字体、明暗主题、细窄滚动条、单页文档版式。
 │  ├─ css/custom.css        # 站点的颜色、明暗、文档版式、滚动条覆盖
 │  └─ js/main.min.js        # 线上实际加载的脚本
 ├─ arxiver/assets/
-│  ├─ index/                # 截图（home.jpg、library.jpg 等）
+│  ├─ index/                # 截图（home.webp、library.jpg 等）
 │  └─ videos/               # 演示视频（mp4）
 └─ images/                  # 头像、favicon、manifest
 ```

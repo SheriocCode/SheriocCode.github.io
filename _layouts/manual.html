@@ -10,7 +10,7 @@ layout: default
     <aside class="manual__toc" id="manual-toc">
       <div class="manual__toc-head">
         <a class="manual__toc-name" href="{{ base_path }}/arxiver/">Arxiver</a>
-        <span class="manual__toc-ver">v0.16.0</span>
+        <span class="manual__toc-ver">v0.17.1</span>
       </div>
       {% for group in page.toc %}
         <span class="manual__cap">{{ group.title }}</span>
@@ -85,5 +85,80 @@ layout: default
   };
   window.addEventListener("scroll", update, { passive: true });
   update();
+})();
+</script>
+
+<script>
+(function () {
+  // 给文档图片带上构建版本号，替换同名图片后不会被浏览器旧缓存挡住
+  var version = "{{ site.time | date: '%s' }}";
+  var images = Array.prototype.slice.call(document.querySelectorAll(".manual__content img")).filter(function (img) {
+    return !img.closest("a") && !img.closest(".rtd-badges");
+  });
+  if (!images.length) { return; }
+
+  var box = document.createElement("div");
+  box.className = "manual-lightbox";
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "图片全屏预览");
+  box.innerHTML =
+    '<img class="manual-lightbox__img" alt="" draggable="false">' +
+    '<div class="manual-lightbox__caption" hidden></div>' +
+    '<button type="button" class="manual-lightbox__close" aria-label="关闭预览">&times;</button>';
+  document.body.appendChild(box);
+
+  var boxImg = box.querySelector(".manual-lightbox__img");
+  var caption = box.querySelector(".manual-lightbox__caption");
+  var closeBtn = box.querySelector(".manual-lightbox__close");
+  var lastFocus = null;
+
+  var open = function (img) {
+    lastFocus = document.activeElement;
+    boxImg.src = img.currentSrc || img.src;
+    boxImg.alt = img.alt || "";
+    var figure = img.closest("figure");
+    var figcaption = figure && figure.querySelector("figcaption");
+    var text = figcaption ? figcaption.textContent.trim() : "";
+    caption.textContent = text;
+    caption.hidden = !text;
+    box.classList.add("is-open");
+    document.body.classList.add("is-lightbox-open");
+    window.requestAnimationFrame(function () { closeBtn.focus(); });
+  };
+
+  var close = function () {
+    if (!box.classList.contains("is-open")) { return; }
+    box.classList.remove("is-open");
+    document.body.classList.remove("is-lightbox-open");
+    if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+  };
+
+  images.forEach(function (img) {
+    var src = img.getAttribute("src");
+    if (src && src.indexOf("?v=") === -1) {
+      img.setAttribute("src", src + (src.indexOf("?") === -1 ? "?" : "&") + "v=" + version);
+    }
+    img.classList.add("is-zoomable");
+    img.setAttribute("tabindex", "0");
+    img.setAttribute("role", "button");
+    img.setAttribute("aria-label", "查看大图：" + (img.alt || "图片"));
+    img.title = "点击全屏查看";
+    img.addEventListener("click", function () { open(img); });
+    img.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        open(img);
+      }
+    });
+  });
+
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", function (e) {
+    if (e.target === box || e.target === boxImg) { close(); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { close(); }
+  });
 })();
 </script>
