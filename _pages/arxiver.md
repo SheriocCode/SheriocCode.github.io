@@ -51,29 +51,16 @@ toc:
 </div>
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">
-  <img src="/arxiver/assets/index/home.jpg" alt="Arxiver 主界面">
+  <img src="/arxiver/assets/index/home.webp" alt="Arxiver 主界面">
   <figcaption>主界面：文献库、双语阅读与 AI 助手在同一个窗口。</figcaption>
 </figure>
 
-## 为什么值得一试
+<figure class="rtd-doc-figure rtd-doc-figure--wide">
+  <img src="/arxiver/assets/index/pipeline.webp" alt="Arxiver 工作原理">
+  <figcaption>Arxiver 工作原理</figcaption>
+</figure>
 
-<div class="rtd-feature-grid">
-  <div class="rtd-feature-card"><strong>真正离线</strong><p>内置 HY-MT 翻译模型与 llama.cpp 运行时，不需要 API Key，论文不出本机。</p></div>
-  <div class="rtd-feature-card"><strong>三视图阅读</strong><p>保留原 PDF 版面，原文 / 对照 / 译文逐页切换，块框可溯源到原文段落。</p></div>
-  <div class="rtd-feature-card"><strong>AI 助手</strong><p>跨文献问答、联网检索，引用精确到页码 + 段落，点击直接跳到原文。</p></div>
-  <div class="rtd-feature-card"><strong>文献管理</strong><p>分类、标签、笔记、回收站、全文检索；粘贴 arXiv 编号 / DOI / 链接即可导入。</p></div>
-  <div class="rtd-feature-card"><strong>Overleaf 工作区</strong><p>内嵌 Overleaf，AI 按需读取项目文件，修改建议确认后才写入。</p></div>
-  <div class="rtd-feature-card"><strong>差量更新</strong><p>升级只下载变化的块；引擎与翻译模型没变就不会重下。</p></div>
-</div>
 
-## 和 Zotero 比一比
-
-| 能力 | Arxiver | Zotero |
-| --- | --- | --- |
-| 论文翻译 | 内置本机翻译，离线、0 费用、边翻边看 | 无内置，需第三方插件，多为在线服务 |
-| AI 助手 | 跨文献问答、联网检索、读写文献库 | 官方无内置 |
-| 文献管理 | 分类、标签、笔记、回收站、全文检索 | 元数据与浏览器抓取更完整 |
-| Overleaf | 内嵌工作区，可按需读取与修改 | 无 |
 
 ## 界面与演示 {#demo}
 
@@ -103,7 +90,7 @@ toc:
 ### 视频演示 {#videos}
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">
-  <video controls muted loop playsinline preload="metadata" width="1206" height="720" poster="/arxiver/assets/index/home.jpg">
+  <video controls muted loop playsinline preload="metadata" width="1206" height="720" poster="/arxiver/assets/index/home.webp">
     <source src="/arxiver/assets/videos/translate.mp4" type="video/mp4">
   </video>
   <figcaption>翻译：原文 / 对照 / 译文三视图，边翻边看。</figcaption>
@@ -386,6 +373,16 @@ npm run dist       # 打包安装包（electron-builder）
 ## 更新日志 {#changelog}
 
 全部版本见 [GitHub Releases](https://github.com/SheriocCode/Arxiver/releases)。
+
+### v0.17.0（2026-11-02）
+
+- **「顺便问」变成挂在原文上的子对话**：在回答里选中一段文字提问，答完会自动存进这条会话；正文里那段文字会画虚线下划线，点一下就能重开完整记录（包含所有问答），一条回答可以挂多条。小窗改为非模态、可拖动，点界面别处不再关闭，关掉窗口或切换文献都不会丢，重新打开还能接着问。
+- **回答过程更透明**：生成中在消息末尾显示「正在生成… 已 Ns」，多轮调用之间不再看起来像已经答完；回答被输出长度上限截断、被内容过滤或连接中途断开时会明确提示原因，回复「继续」即可接着写。
+- **公式渲染修复**：整行写的 `$$...$$` 之前会被当成行内公式，`\tag`、`aligned` 等只支持块级模式的命令直接报错、整段被染红；现在会在渲染前规整成块级公式，代码块里的 `$$` 不受影响。
+- **请求稳定性**：修复截断文本产生孤立代理字符、导致接口返回 `HTTP 400 lone leading surrogate` 的问题。
+- **阅读器选区**：高亮按文字块精确求交，不再在相邻行多出一小段；多行选区的行间空隙会补齐成连续的一块。引用原文高亮与保存标注共用同一套矩形。
+- **面板滚动**：指针停在右侧对话导航或「回到底部」按钮上也能滚动正文；生成中往上翻不会再被自动跟随拽回底部。
+- **日志搜索**：搜索框统一放到页头右上角，按当前页签做全文搜索——翻译按任务字段，系统运行按日志正文与模块名，AI 对话则扫描会话标题与全部消息（命中列表显示上下文片段与命中次数）。
 
 ### v0.16.0（2026-10-29）
 
