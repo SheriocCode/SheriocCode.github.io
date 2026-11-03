@@ -138,6 +138,7 @@ exclude:
   - assets/js/_main.js
   - assets/js/plugins
   - assets/js/vendor
+  - arxiver/assets/videos/raw
   - CHANGELOG
   - Capfile
   - config

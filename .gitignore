@@ -21,3 +21,6 @@ package-lock.json
 
 # Jekyll cache
 .jekyll-cache/
+
+# 视频原始素材（不参与构建与提交）
+arxiver/assets/videos/raw/

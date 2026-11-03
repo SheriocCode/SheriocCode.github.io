@@ -96,24 +96,17 @@ AI 助手基于当前论文或整个文献库作答，引用标注页码与原�
 ### 视频演示 {#videos}
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">
-  <video controls muted loop playsinline preload="metadata" width="1206" height="720" poster="/arxiver/assets/index/home.webp">
-    <source src="/arxiver/assets/videos/translate.mp4" type="video/mp4">
+  <video controls muted loop playsinline preload="metadata" width="1280" height="720" poster="/arxiver/assets/index/home.webp">
+    <source src="/arxiver/assets/videos/index.mp4" type="video/mp4">
   </video>
-  <figcaption>翻译：原文 / 对照 / 译文三视图，边翻边看。</figcaption>
-</figure>
-
-<figure class="rtd-doc-figure rtd-doc-figure--wide">
-  <video controls muted loop playsinline preload="metadata" width="1280" height="764" poster="/arxiver/assets/index/library.jpg">
-    <source src="/arxiver/assets/videos/tagging.mp4" type="video/mp4">
-  </video>
-  <figcaption>文献管理：批量加标签、分类与全文检索。</figcaption>
+  <figcaption>主演示：从文献库、翻译到 AI 助手与「顺便问」。</figcaption>
 </figure>
 
 <figure class="rtd-doc-figure rtd-doc-figure--wide">
   <video controls muted loop playsinline preload="metadata" width="1280" height="764" poster="/arxiver/assets/index/overleaf.jpg">
     <source src="/arxiver/assets/videos/overleaf.mp4" type="video/mp4">
   </video>
-  <figcaption>Overleaf：AI 按需读取项目文件，REPLACE / INSERT / CREATE_FILE 建议确认后写入。</figcaption>
+  <figcaption>Overleaf集成：AI 按需读取项目文件，REPLACE / INSERT / CREATE_FILE 建议确认后写入。</figcaption>
 </figure>
 
 ## 下载与安装 {#download}
